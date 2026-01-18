@@ -1,0 +1,114 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\setbeamertemplate{navigation symbols}{}
+
+\title[NLP in Python]{\textbf{Natural Language Processing in Python}}
+\subtitle{HSE University --- Master’s in Data Science }
+\author[Shalileh]{Assoc.\ Prof.\ Soroosh Shalileh}
+\institute[HSE]{Higher School of Economics (HSE University)}
+\date{Spring Semester (Modules 3--4)}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{1.~Course Motivation and Context}
+\begin{itemize}
+  \item \textbf{Why NLP now?} Explosive growth of language data and large language models (LLMs) transforming research and industry.
+  \item \textbf{Goal:} Equip students with the theoretical foundations and practical skills to design, train, and evaluate NLP systems.
+  \item \textbf{Fit within program:} Advanced elective for Data Science \& AI focusing on text analytics, deep learning, and generative models.
+  \item \textbf{Main reference:} Jurafsky \& Martin, \emph{Speech and Language Processing (3rd~ed.\ draft, 2025)}.
+\end{itemize}
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{2.~Course Structure}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Module 3: Foundations}
+\begin{itemize}
+  \item Tokenization, normalization
+  \item N-gram language models
+  \item Logistic regression \& text classification
+  \item Word embeddings \& neural networks
+  \item Mini-Project: Classical/embedding pipeline
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Module 4: Advanced Topics }
+\begin{itemize}
+  \item Transformers and BERT
+  \item Retrieval-Augmented Generation (RAG)
+  \item Instruction tuning \& alignment
+  \item Machine translation, interpretability (if time permist)
+  \item Final Project: research or applied NLP system
+\end{itemize}
+\end{columns}
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{3.~Learning Outcomes}
+By the end of the course, students will be able to:
+\begin{enumerate}[leftmargin=*]
+  \item Implement and compare classical and neural NLP models in Python.
+  \item Fine-tune and evaluate transformer architectures using \texttt{PyTorch} and \texttt{HuggingFace}.
+  \item Build retrieval-augmented and instruction-tuned systems.
+  \item Critically analyze performance, fairness, and interpretability.
+  \item Communicate findings through reproducible experiments and concise reports.
+\end{enumerate}
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{4.~Evaluation and Projects}
+\begin{itemize}
+  \item \textbf{Homeworks (7)} --- 35\%: implementation + analysis.
+  \item \textbf{Mini-Project} --- 20\%: foundational NLP pipeline.
+  \item \textbf{Final Project} --- 30\%: research or applied system.
+  \item \textbf{Participation \& quizzes} --- 15\%.
+\end{itemize}
+
+\medskip
+\textbf{Project Examples:}
+\begin{itemize}
+  \item Domain-specific BERT fine-tuning (legal or finance)
+  \item Cross-lingual sentiment analysis
+  \item Retrieval-augmented QA
+  \item Instruction-tuning experiment on compact models
+\end{itemize}
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{5.~Takeaways and Contact}
+\begin{itemize}
+  \item Hands-on, research-oriented exploration of NLP fundamentals to advanced transformer methods.
+  \item Encourages creativity, reproducibility, and critical analysis.
+  \item Builds bridges between data science practice and modern AI research.
+\end{itemize}
+
+\bigskip
+\textbf{Instructor:} Assoc.\ Prof.\ Soroosh Shalileh\\
+\textbf{Email:} \texttt{sshalileh@hse.ru}; \\ 
+\textbf{\ \ \ \ \ \ \ \ } sr.shalileh@gmail.com \\
+\textbf{Office Hours:} By appointment\\[0.5em]
+\textbf{Course page:} \url{https://web.stanford.edu/~jurafsky/slp3/} (textbook reference)
+
+\textbf{Communication} {\color{red}fill-in the form using} \href{https://docs.google.com/forms/d/e/1FAIpQLScSjsQMZNR5WmPqVBbzrdmQPuR3xlC9FB6X2P1VQGl_u9ROWw/viewform?usp=publish-editor}{\color{blue}{this link}}
+below to receive course materials.
+
+
+\end{frame}
+%------------------------------------------------
+\end{document}

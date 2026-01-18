@@ -1,0 +1,143 @@
+t
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\setlength{\parskip}{0.8em}
+
+\title{\textbf{Projects Guide}\\[0.5em]
+Natural Language Processing in Python --- HSE University}
+\author{Assoc.\ Prof.\ Soroosh Shalileh}
+\date{Spring Semester (Modules 3--4)}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+This guide outlines expectations and evaluation criteria for the two major course projects in the \emph{Natural Language Processing in Python} course. Both projects are designed to foster research thinking, technical depth, and clear scientific communication.
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Mini-Project (Module 3)}: Midterm project focused on foundational NLP methods.
+  \item \textbf{Final Project (Module 4)}: Student-designed research or application project using advanced neural/transformer-based methods.
+\end{itemize}
+
+\section{Mini-Project (Module 3)}
+\subsection*{Objective}
+The Mini-Project consolidates fundamental NLP concepts covered in the first module of the course. It should combine preprocessing, representation, and modeling steps to form an end-to-end pipeline.
+
+\subsection*{Structure}
+\begin{itemize}[leftmargin=*]
+  \item Work individually or in pairs.
+  \item Select one of the guided tracks below or propose a similar variant.
+  \item Duration: 2-4 weeks (Weeks 6--8).
+  \item Deliverables: GitHub repository, short paper (3--4 pages), 5-minute presentation.
+\end{itemize}
+
+\subsection*{Suggested Tracks}
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Classical NLP Pipeline:} Tokenization $\rightarrow$ TF--IDF $\rightarrow$ Logistic Regression or Feedforward Neural Network.\\
+        \emph{Goal:} Compare preprocessing choices and analyze their impact on performance.\\
+        \emph{Dataset:} IMDb reviews, AG News, or a Russian sentiment corpus.
+
+  \item \textbf{Embedding-Based Classifier:} Use word2vec or GloVe embeddings and train Feedforward Neural Network classifier.\\
+        \emph{Goal:} Compare pretrained vs.\ locally trained embeddings on small data.\\
+        \emph{Dataset:} News or Wikipedia paragraphs.
+
+  \item \textbf{Sequence Modeling (optional advanced):} Train an more complex (not being taught during the lecture)  on character- or word-level language modeling.\\
+        \emph{Goal:} Explore overfitting and perplexity as a diagnostic tool.
+
+  \item \textbf{Quantitative Study:} Analyze tokenizer or language model errors across languages or domains.\\
+        \emph{Goal:} Demonstrate ability to collect and interpret linguistic data.
+\end{enumerate}
+
+\subsection*{Grading (100 points)}
+\begin{tabular}{ll}
+\textbf{Component} & \textbf{Points} \\
+\hline
+Technical correctness \& implementation & 30 \\
+Experimental design \& analysis & 25 \\
+Insight and interpretation & 20 \\
+Code organization \& reproducibility & 15 \\
+Presentation \& clarity of report & 10 \\
+\end{tabular}
+
+\subsection*{Timeline}
+\begin{tabular}{lll}
+\textbf{Week} & \textbf{Milestone} & \textbf{Deliverable}\\
+\hline
+6 & Topic selection & 1-paragraph plan approved by instructor \\
+7 & Preliminary results & short check-in during lab \\
+8 & Submission \& presentation & repository + short paper \\
+\end{tabular}
+
+\section{Final Project (Module 4)}
+\subsection*{Objective}
+The Final Project is a capstone research or applied project, designed and executed by students. It should demonstrate mastery of modern NLP methods, including transformers, retrieval, or alignment approaches (if time permits).
+
+\subsection*{Structure}
+\begin{itemize}[leftmargin=*]
+  \item Work in teams of 1--3 students (2 recommended).
+  \item Duration: Weeks 3--6 (8 weeks).
+  \item Proposal approval required (Week 12 deadline).
+  \item Deliverables: GitHub repository, 6--8 page paper (ACL-style), 10-minute demo presentation.
+\end{itemize}
+
+\subsection*{Example Project Ideas}
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Domain-Specific Fine-Tuning:} Adapt BERT or RoBERTa to a domain corpus (finance, legal, health). Evaluate with domain-specific metrics.
+  \item \textbf{Cross-Lingual Transfer:} Compare multilingual transformers (mBERT, XLM-R) for NER or sentiment across languages.
+  \item \textbf{Retrieval-Augmented QA:} Implement a small RAG pipeline using dense or sparse retrievers; evaluate latency vs.\ accuracy.
+  \item \textbf{Instruction-Tuned Models:} Perform small-scale SFT or DPO on a compact model; design custom evaluation rubric for helpfulness.
+  \item \textbf{Interpretability Study:} Analyze token-level saliency or probing on pretrained LMs; visualize hidden representations.
+  \item \textbf{Bias and Fairness Analysis:} Examine demographic or topical bias in model outputs using template-based generation.
+  \item \textbf{Low-Resource Adaptation:} Explore parameter-efficient fine-tuning (LoRA, prefix-tuning) for small corpora.
+  \item \textbf{NLP Systems Project:} Build an applied pipeline (chatbot, text summarizer, domain QA) integrating modern APIs or models.
+\end{enumerate}
+
+\subsection*{Proposal Requirements (Week 12)}
+Each team submits a one-page PDF proposal including:
+\begin{itemize}[leftmargin=*]
+  \item Project title and motivation
+  \item Research question and hypothesis
+  \item Dataset(s) and expected preprocessing steps
+  \item Baseline and planned experiments
+  \item Evaluation metrics and timeline
+\end{itemize}
+
+\subsection*{Grading Rubric (100 points)}
+\begin{tabular}{ll}
+\textbf{Component} & \textbf{Points} \\
+\hline
+Problem definition \& clarity & 10 \\
+Data \& experimental setup & 20 \\
+Technical correctness \& methodology & 25 \\
+Analysis \& interpretation & 25 \\
+Writing \& presentation quality & 15 \\
+Originality \& insight & 5 \\
+\end{tabular}
+
+% \subsection*{Timeline}
+% \begin{tabular}{lll}
+% \textbf{Week} & \textbf{Milestone} & \textbf{Deliverable}\\
+% \hline
+% 11 & Brainstorming session & group discussions during lab \\
+% 12 & Proposal submission & 1-page PDF proposal \\
+% 14 & Progress update & short in-class demo \\
+% 16 & Final presentation & slides + 6--8 page paper + repo \\
+% \end{tabular}
+
+\section*{General Notes}
+\begin{itemize}[leftmargin=*]
+  \item Reports should follow the ACL two-column format (LaTeX or Overleaf template).
+  \item Code must be reproducible and accompanied by a clear \texttt{README}.
+  \item Datasets must be publicly available or properly licensed.
+  \item Collaborations across teams are permitted for discussion but not code sharing.
+  \item Outstanding projects may be invited for research paper submissions or lab collaboration.
+\end{itemize}
+
+\end{document}

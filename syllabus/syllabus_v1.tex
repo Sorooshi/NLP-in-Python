@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+
+%---------------- Header/Footer ----------------%
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{NLP in Python — Spring (Modules 3–4)}
+\lhead{Assoc.\ Prof.\ Soroosh Shalileh}
+\rfoot{\thepage}
+
+%---------------- Title ----------------%
+\title{\textbf{Natural Language Processing (NLP) in Python}\\
+\large Master’s in Data Science -- HSE University}
+\author{Instructor: Assoc.\ Prof.\ Soroosh Shalileh \\
+Email: \texttt{sshalileh@hse.ru}}
+\date{Spring Semester (Modules 3–4)}
+
+\begin{document}
+\maketitle
+
+\section*{Course Duration and Meeting Pattern}
+\begin{itemize}[leftmargin=1.25em]
+  \item \textbf{Length:} 13 teaching weeks across Spring Modules 3–4 (typ.\ January--June).
+  \item \textbf{Contact hours:} 1 \emph{lecture} (two hours) $+$ 1 \emph{lab/seminar} (two hours).
+  \item \textbf{Student workload:} 5--10 hours/week for readings, homework, and project work.
+\end{itemize}
+
+\section*{Course Description}
+This course progresses from essential NLP foundations to state-of-the-art methods with an emphasis on \emph{advanced neural} and \emph{LLM-centric} techniques. We build core skills (tokenization, classical text classification, embeddings) and then dive into modern topics: neural networks for NLP, large language models (LLMs), transformers, masked LMs (BERT), retrieval-augmented generation (RAG), instruction tuning, machine translation, and recurrent models. Python labs use \texttt{PyTorch} and \texttt{HuggingFace Transformers}, with supporting use of \texttt{NLTK}/\texttt{spaCy}/\texttt{scikit-learn}.
+
+\section*{Primary Textbook}
+\textbf{Daniel Jurafsky and James H.\ Martin}, \emph{Speech and Language Processing, 3rd ed.\ (online draft)}. Latest release: Aug 24, 2025.\\
+\url{https://web.stanford.edu/~jurafsky/slp3/}
+
+\section*{Course Outcomes}
+By the end, students can:
+\begin{enumerate}[leftmargin=1.25em]
+  \item Implement classical and neural NLP models in Python.
+  \item Fine-tune transformer models for classification and sequence labeling.
+  \item Build RAG pipelines and evaluate IR components.
+  \item Explain instruction tuning/align\-ment and masked vs.\ causal LMs.
+\end{enumerate}
+
+\section*{Weekly Schedule (Readings from Jurafsky \& Martin, SLP3)}
+\subsection*{Module 3 — Foundations}
+\begin{enumerate}[label=\textbf{Week \arabic*.}, leftmargin=*]
+  \item \textbf{Intro to NLP, course Logistics - I}.
+  Tasks, datasets, evaluation, ethics.
+  Words \& Tokens, Edit Distance. Unicode, normalization, and tokenization. \\
+        \emph{Reading:} Ch.\ 2 (\emph{Words and Tokens}).   
+    \item \textbf{Intro to NLP - II}.
+    Tasks, datasets, evaluation, ethics.
+    Words \& Tokens, Edit Distance. Unicode, normalization, and tokenization. \\
+    \emph{Reading:} Ch.\ 2 (\emph{Words and Tokens}). 
+  \item \textbf{N-gram Language Models.} MLE, smoothing, perplexity.\\
+        \emph{Reading:} Ch.\ 3 (\emph{N-gram Language Models}).
+  \item \textbf{Logistic Regression for Text Classification.} Features for text, calibration, errors.\\
+        \emph{Reading:} Ch.\ 4 (\emph{Logistic Regression and Text Classification}).
+  \item \textbf{Embeddings (Static).} Distributional semantics, word2vec, GloVe; intrinsic eval.\\
+        \emph{Reading:} Ch.\ 5 (\emph{Embeddings}).
+  \item \textbf{Neural Networks (Feedforward) for NLP.} From features to learned reps.\\
+        \emph{Reading:} Ch.\ 6 (\emph{Neural Networks}).
+  \item \textbf{Large Language Models (Overview).} Causal LMs, sampling, scaling laws, safety.\\
+        \emph{Reading:} Ch.\ 7 (\emph{Large Language Models}). \\
+\end{enumerate}
+
+\textbf{End of 3rd module:} mini-Project 1: End-to-end pipeline (tokenization $\rightarrow$ features/embeddings $\rightarrow$ classifier). In-class lightning talks.
+
+\subsection*{Module 4 — Advanced Topics; emphasis on modern methods)}
+\begin{enumerate}[label=\textbf{Week \arabic*.}, start=8, leftmargin=*]
+    \item \textbf{Transformers (I):} Self-attention, encoder/decoder, positional encoding, scaling (it time permits, o.w will be shifted to next module).\\
+        \emph{Reading:} Ch.\ 8 (\emph{Transformers}).
+        
+  \item \textbf{Transformers (II) \& Masked LMs (BERT).} Encoders, pretraining objectives, finetuning.\\
+        \emph{Reading:} Ch.\ 10 (\emph{Masked Language Models}).
+        
+  \item \textbf{Retrieval \& RAG (I).} Dense/sparse retrieval, indexing, retrieval-augmented QA.\\
+        \emph{Reading:} Ch.\ 11 (\emph{Information Retrieval and Retrieval-Augmented Generation}).
+
+  \item \textbf{Instruction Tuning \& Alignment.} SFT, DPO, preference data, test-time compute.\\
+        \emph{Reading:} Ch.\ 9 (\emph{Post-training: Instruction Tuning, Alignment, \& Test-Time Compute}).
+  
+  \item \textbf{Reserved.} Devoted to adjust the course plan and unexpected shifts. If we manage to cover all planned the materials, some optionl subject will be covered.   
+
+  % \item \textbf{Machine Translation.} Encoder–decoder, attention, evaluation (BLEU/COMET), domain adaptation.\\
+  %       \emph{Reading:} Ch.\ 12 (\emph{Machine Translation}).
+
+  % \item \textbf{RNNs \& LSTMs (Legacy/Complementary).} Unrolling, BPTT, seq2seq; where RNNs remain useful.\\
+  %       \emph{Reading:} Ch.\ 13 (\emph{RNNs and LSTMs}).
+
+\item \textbf{Final Project Presentations.} Demo, report, and reflection.
+
+        
+\end{enumerate}
+
+
+\subsection*{Optional Classes (if time permits)}
+\begin{itemize}[leftmargin=1.25em]
+  \item \textbf{Optional A:} Sequence Labeling and IE (Applications). NER/POS (BIO tagging), span extraction; IE basics.\\ 
+  
+  \emph{Reading:} Ch.\ 17 (\emph{Sequence Labeling for POS and NER}); Ch.\ 20 (\emph{Information Extraction}) \emph{(selected sections)}.
+        
+  \item \textbf{Optional B:} Interpretability for NLP (saliency, probing, LIME/SHAP, adversarial examples).
+  \item \textbf{Optional C:} Advanced RAG systems (chunking strategies, reranking, evaluation pitfalls, caching).
+\end{itemize}
+
+\section*{Homework Assignments (7 total)}
+\begin{enumerate}[leftmargin=1.25em]
+  \item \textbf{HW1 (Foundations):} Tokenization \& normalization; implement edit distance; error analysis (Ch.\ 2--3).
+  \item \textbf{HW2 (Classical Text Clf):} TF–IDF $+$ logistic regression baseline; calibration \& interpretability (Ch.\ 4).
+  \item \textbf{HW3 (Embeddings):} Train word2vec/GloVe on a small corpus; visualize neighborhoods; intrinsic vs.\ extrinsic eval (Ch.\ 5).
+  \item \textbf{HW4 (Neural Basics):} Feedforward text classifier with learned embeddings; compare to HW2 (Ch.\ 6).
+  \item \textbf{HW5 (BERT Finetuning):} Finetune a masked-LM encoder (e.g., \texttt{bert-base-uncased}) for NER or sentiment; ablations (Ch.\ 10).
+  \item \textbf{HW6 (RAG Mini-System):} Build a retrieval-augmented QA pipeline (BM25 or dense retriever $+$ reader); report latency/accuracy tradeoffs (Ch.\ 11).
+  \item \textbf{HW7 (Instruction Tuning \& Safety):} Small-scale SFT/DPO experiment on a distilled model; evaluate helpfulness/harms; write reflection (Ch.\ 9).
+\end{enumerate}
+
+\section*{Projects}
+\textbf{Mini-Project 1 (end of Week 8):} Classical vs.\ neural baseline comparison on a text classification task (short paper + 5-min talk).\\
+\textbf{Final Project (Week 16):} Team project on an applied or research question (e.g., domain-specific QA, MT, NER at scale, or RAG system). Deliverables: repo, 6–8 page report, 10-min demo.
+
+\section*{Evaluation Policy}
+\begin{tabular}{ll}
+\textbf{Component} & \textbf{Weight} \\
+\hline
+Homework (7) & 35\% \\
+Mini-Project 1 & 20\% \\
+Final Project & 30\% \\
+Participation (labs, discussions, peer feedback) & 10\% \\
+Short quiz/reading checks (occasional) & 5\% \\
+\end{tabular}
+
+\section*{Software and Tools}
+Python 3.x; Jupyter/Colab; \texttt{NLTK}, \texttt{spaCy}, \texttt{scikit-learn}, \texttt{gensim}; \texttt{PyTorch}; \texttt{HuggingFace Transformers}; optional \texttt{Weights\&Biases}/TensorBoard. GitHub Classroom for submissions is recommended.
+
+\end{document}
