@@ -5,6 +5,8 @@
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{parskip}
+\usepackage{amsmath, amssymb} 
+\usepackage{xcolor}
 
 %---------------- Header/Footer ----------------%
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
@@ -26,7 +28,7 @@ Email: \texttt{sshalileh@hse.ru}}
 
 \section*{Course Duration and Meeting Pattern}
 \begin{itemize}[leftmargin=1.25em]
-  \item \textbf{Length:} 13 teaching weeks across Spring Modules 3–4 (typ.\ January--June).
+  \item \textbf{Length:} 13 teaching (educational) weeks across Spring Modules 3–4 (typ.\ January--June).
   \item \textbf{Contact hours:} 1 \emph{lecture} (two hours) $+$ 1 \emph{lab/seminar} (two hours).
   \item \textbf{Student workload:} 5--10 hours/week for readings, homework, and project work.
 \end{itemize}
@@ -34,7 +36,7 @@ Email: \texttt{sshalileh@hse.ru}}
 \section*{Course Description}
 This course progresses from essential NLP foundations to state-of-the-art methods with an emphasis on \emph{advanced neural} and \emph{LLM-centric} techniques. We build core skills (tokenization, classical text classification, embeddings) and then dive into modern topics: neural networks for NLP, large language models (LLMs), transformers, masked LMs (BERT), retrieval-augmented generation (RAG), instruction tuning, machine translation, and recurrent models. Python labs use \texttt{PyTorch} and \texttt{HuggingFace Transformers}, with supporting use of \texttt{NLTK}/\texttt{spaCy}/\texttt{scikit-learn}.
 
-\section*{Primary Textbook}
+\section*{Main Textbook}
 \textbf{Daniel Jurafsky and James H.\ Martin}, \emph{Speech and Language Processing, 3rd ed.\ (online draft)}. Latest release: Aug 24, 2025.\\
 \url{https://web.stanford.edu/~jurafsky/slp3/}
 
@@ -110,28 +112,10 @@ By the end, students can:
   \item \textbf{Optional C:} Advanced RAG systems (chunking strategies, reranking, evaluation pitfalls, caching).
 \end{itemize}
 
-\section*{Homework Assignments (7 total) - Deadline: by the end of the 4th module in one collection}
-\begin{enumerate}[leftmargin=1.25em]
-  \item \textbf{HW1 (Foundations - Ch.\ 2--3):} 
-  \\ Normalization \& tokenization: 
-  select a data set of your choice, conduct a brief exploratory data analysis, decide an arbitrary task you are supposed to implement, and apply the text normalization and tokenization as discussed in the classed. 
-  \\ Implement either Edit Distance or Byte-pairing algorithm and apply it to you data set and analysis the output and comment on it. 
-  \item \textbf{HW2 (Classical Text classification - Ch.\ 4):} Construct at least two variant of N-gram (justify your choice) and apply logistic regression on them and evaluate the results using proper metrics, justify your choice and analyze them.
-  \item \textbf{HW3 (Embeddings - Ch.\ 5):} Train word2vec/GloVe on a small corpus; visualize neighborhoods; intrinsic vs.\ extrinsic evaluation. .
-  \item \textbf{HW4 (Neural Basics - Ch.\ 6):} \\ Option 1: Feedforward neural network text classifier with learned embeddings.
-  \\ Option 2: Use a feedforward neural network to obtained an embedding. 
-  \\ For each option the choice of each component should be clarified clearly and justified. 
-  \item \textbf{HW5 (BERT Finetuning):}  TBD
-  % Finetune a masked-LM encoder (e.g., \texttt{bert-base-uncased}) for NER or sentiment; ablations (Ch.\ 10).
-  \item \textbf{HW6 (RAG Mini-System):} TBD
-  % Build a retrieval-augmented QA pipeline (BM25 or dense retriever $+$ reader); report latency/accuracy tradeoffs (Ch.\ 11).
-  \item \textbf{HW7 (Instruction Tuning \& Safety):} TBD
-  % Small-scale SFT/DPO experiment on a distilled model; evaluate helpfulness/harms; write reflection (Ch.\ 9).
-\end{enumerate}
 
 \section*{Projects}
-\textbf{Mini-Project 1 (end of Week 8):} your proposed subject (short paper + 5-min talk).\\
-\textbf{Final Project (Week 13):} your proposed subject approved by insructure. 
+\textbf{Mini-Project 1:} your proposed subject (short paper + 5-min talk).\\
+\textbf{Final Project:} your proposed subject approved by insructure. 
 Deliverables: repo, 4–6 page report, 10-min demo.
 
 \section*{Evaluation Policy}
@@ -145,7 +129,189 @@ Participation (labs, discussions, peer feedback) & 10\% \\
 Short quiz/reading checks (occasional) & 5\% \\
 \end{tabular}
 
+
+
+\section*{Submission Guidelines}
+
+\subsection*{Homework Submissions}
+\begin{itemize}[leftmargin=1.25em]
+  \item All homework assignments must be submitted \textbf{together as a single \texttt{.zip} file} by \textbf{24th April}.
+  \item The zip file must be named using the following convention: \texttt{Firstname\_Lastname\_NLP\_HW.zip}.
+  \item Inside the zip, each homework should be in its own folder named \texttt{HW1}, \texttt{HW2}, \ldots,.
+  \item Each homework folder must contain:
+  \begin{itemize}
+    \item A \textbf{Jupyter notebook} (\texttt{.ipynb}) or Python script(s) with clean, runnable code.
+    \item A \textbf{short written report} (PDF, or within the notebook) explaining your approach, results, and analysis.
+    \item A \texttt{README.txt} briefly describing how to run your code and any dependencies.
+  \end{itemize}
+  \item Submit the zip file via email to \texttt{sshalileh@hse.ru} with the subject line \texttt{[NLP HW] Firstname Lastname}.
+  \item \textcolor{red}{\textbf{Reminder:} For each homework and each section, you must clearly state the problem. Submissions that fail to do so will receive \emph{zero} for that assignment. Submissions which do not adhere to the structure above will be penalized accordingly.}
+\end{itemize}
+
+\subsection*{Mini-Project Submission}
+\begin{itemize}[leftmargin=1.25em]
+  \item Submit a \textbf{GitHub repository}\footnote{The zip file of of the repository is also acceptable.} containing all code, data references, and a \texttt{README} describing how to reproduce your results.
+  \item Include a \textbf{short paper} (2--3 pages, ACL two-column format) as a PDF in the repository root.
+  \item Be prepared to give a \textbf{5-minute in-class presentation} (slides optional but recommended).
+  \item Share the repository link by emailing \texttt{sshalileh@hse.ru} with the subject line \texttt{[NLP Mini-Project] Firstname Lastname} by 26 March 2026.
+\end{itemize}
+
+\subsection*{Final Project Submission}
+\begin{itemize}[leftmargin=1.25em]
+  \item Submit a \textbf{GitHub repository} containing all code, data references, and a \texttt{README} describing how to reproduce your results.
+  \item Include a \textbf{project report} (4--6 pages, ACL two-column format) as a PDF in the repository root.
+  \item Be prepared to give a \textbf{10-minute in-class demo/presentation}.
+  \item Share the repository link by emailing \texttt{sshalileh@hse.ru} with the subject line \texttt{[NLP Final Project] Firstname Lastname} by \textbf{10 May}.
+  \item \textcolor{red}{\textbf{Reminder:} editing/pushing repository after the deadline will be considered as missing the deadline and you will loss the entire score.
+\end{itemize}
+
+\section*{Homework Assignments (5 total) - Deadline: 24 April 2026, in one collection i.e. \textbf{one zip file}}
+
+\textcolor{red}{\textbf{Attention: \newline 
+\noindent For each homework and each section of it, you should clearly state the problem. 
+Those who fail to clearly and cleanly explain the problem will lose the ENTIRE score.}}
+
+
+\begin{enumerate}[leftmargin=1.25em]
+  \item \textbf{HW1 (Foundations - Ch.\ 2--3):} 
+  \\ Normalization \& tokenization: 
+  select a data set of your choice, conduct a brief exploratory data analysis, decide an arbitrary task you are supposed to implement, and apply the text normalization and tokenization as discussed in the classed. 
+  \\ Implement either Edit Distance or Byte-pairing algorithm and apply it to you data set and analysis the output and comment on it. 
+  \item \textbf{HW2 (Classical Text classification - Ch.\ 4):} Construct at least two variant of N-gram (justify your choice) and apply logistic regression on them and evaluate the results using proper metrics, justify your choice and analyze them.
+  \item \textbf{HW3 (Embeddings - Ch.\ 5):} Train word2vec/GloVe on a small corpus; visualize neighborhoods; intrinsic vs.\ extrinsic evaluation. .
+  \item \textbf{HW4 (Neural Basics - Ch.\ 6):} \\ Option 1: Feedforward neural network text classifier with learned embeddings.
+  \\ Option 2: Use a feedforward neural network to obtained an embedding. 
+  \\ For each option the choice of each component should be clarified clearly and justified. 
+  % \item \textbf{HW5 (MLM Finetuning):} 
+  % Finetune a masked-LM encoder (e.g., \texttt{bert-base-uncased}) for NER or sentiment; ablations (Ch.\ 9).
+
+
+  %%
+  \item \textbf{HW5 (Transformers \& Causal Language Modeling):} \newline
+  \textbf{Objective:}
+    This assignment focuses on understanding self-attention, transformer architecture, and causal language modeling. Students will implement core components, finetune a pretrained model, and analyze attention behavior.
+    
+    \vspace{0.5em}
+    
+    \textbf{Part 1 — Conceptual Questions (20 pts)}
+    
+    \begin{enumerate}
+    \item Explain self-attention. What are queries, keys, and values? Why is attention a weighted sum?
+    
+    \item What is causal masking and why is it necessary in language models?
+    
+    \item Why are multiple attention heads used instead of a single head?
+    
+    \item What is the role of residual connections in transformer models?
+    
+    \vspace{0.5em}
+
+    \end{enumerate}
+    
+    \textbf{Part 2 — Implement Self-Attention (25 pts)}
+    
+    Implement a single-head self-attention layer from scratch (no deep learning libraries for attention).
+    
+    Given input matrix $X \in \mathbb{R}^{n \times d}$:
+    
+    \begin{itemize}
+    \item Compute $Q = XW_Q$, $K = XW_K$, $V = XW_V$
+    \item Compute attention scores:
+    \[
+    A = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
+    \]
+    \item Apply causal masking
+    \item Output:
+    \[
+    \text{Attention}(X) = AV
+    \]
+    \end{itemize}
+    
+    \textbf{Deliverables:}
+    \begin{itemize}
+    \item Code implementation
+    \item Test on a toy example (e.g., 3 tokens)
+    \end{itemize}
+    
+    \vspace{0.5em}
+    
+    \textbf{Part 3 — Causal Language Model Finetuning (30 pts)}
+    
+    Finetune a pretrained causal language model (e.g., \texttt{gpt2}) using Hugging Face Transformers. Quantized and small models like Gemma is also acceptable. 
+    
+    \textbf{Dataset:}
+    Choose a small domain-specific dataset (e.g., tweets, reviews, news headlines).
+    
+    \textbf{Tasks:}
+    \begin{itemize}
+    \item Finetune the model
+    \item Generate text from prompts
+    \item Report training loss and example outputs
+    \end{itemize}
+    
+    \vspace{0.5em}
+    
+    \textbf{Part 4 — Attention Analysis (15 pts)}
+    
+    Analyze attention patterns in the finetuned model.
+    
+    \begin{itemize}
+    \item Visualize attention weights for at least 2 layers
+    \item Select example sentences and inspect which tokens attend to which
+    \item Discuss whether different heads capture different patterns
+    \end{itemize}
+    
+    \vspace{0.5em}
+    
+    \textbf{Part 5 — Ablation Study (10 pts)}
+    
+    Run at least two of set of experiments, for instance, Reduce number of attention heads, change context window size, learning rate, number of epochs etc., and 
+        
+    Discuss their impact on model's performance. 
+    
+    \vspace{0.5em}
+    
+    % \textbf{Part 5 — Generation Behavior (10 pts)}
+    
+    % Compare text generation under different decoding strategies:
+    
+    % \begin{itemize}
+    % \item greedy decoding
+    % \item sampling with temperature
+    % \item top-k or top-p sampling
+    % \end{itemize}
+    
+    % Provide examples and brief analysis.
+    
+    % \vspace{0.5em}
+    
+    \textbf{Submission Requirements:}
+    \begin{itemize}
+    \item Code (Jupyter notebook or Python scripts)
+    \item Short report (3–5 pages) explaining results
+    \item Plots or visualizations where applicable
+    \end{itemize}
+    
+    \vspace{0.5em}
+    
+    \textbf{Optional Bonus (+10 pts):}
+    \begin{itemize}
+    \item Implement multi-head attention from scratch
+    \item Compare with single-head version
+    \end{itemize}
+  %%
+  
+  % \item \textbf{HW6 (RAG Mini-System):} TBD
+  % Build a retrieval-augmented QA pipeline (BM25 or dense retriever $+$ reader); report latency/accuracy tradeoffs (Ch.\ 11).
+
+\end{enumerate}
+
+
+
+
 \section*{Software and Tools}
 Python 3.x; Jupyter/Colab; \texttt{NLTK}, \texttt{spaCy}, \texttt{scikit-learn}, \texttt{gensim}; \texttt{PyTorch}; \texttt{HuggingFace Transformers}; optional \texttt{Weights\&Biases}/TensorBoard. GitHub Classroom for submissions is recommended.
+
+
 
 \end{document}

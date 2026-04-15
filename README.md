@@ -45,12 +45,15 @@ Typical dependencies used across the course include:
 - `jupyter`
 - `pytorch`
 - `transformers`
+- `datasets`
+- `tokenizers`
+- ``
 - `scikit-learn`
 - `gensim`
 - `nltk`
 - `spacy`
 
-## Notes
+<!-- ## Notes
 
 - Some folders such as local datasets, playground files, and grading artifacts are kept out of version control.
-- The repository is designed primarily for teaching, demonstrations, homework support, and project development.
+- The repository is designed primarily for teaching, demonstrations, homework support, and project development. -->
